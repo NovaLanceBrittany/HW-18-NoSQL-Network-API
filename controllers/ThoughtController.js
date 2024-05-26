@@ -48,27 +48,27 @@ module.exports = {
         res.status(404).json({ message: 'No thought with that ID' });
       }
 
-      await User.deleteMany({ _id: { $in: course.users } });
-      res.json({ message: 'Users and thoughts deleted!' });
+      await User.deleteMany({ _id: { $in: thought.users } });
+      res.json({ message: 'User and thoughts deleted!' });
     } catch (err) {
       res.status(500).json(err);
     }
   },
 
-  // TODO: Lookup the runValidators setting to see what it does
-  async updateCourse(req, res) {
+  // The runValidators setting to see 
+  async updateThought(req, res) {
     try {
-      const course = await Course.findOneAndUpdate(
-        { _id: req.params.courseId },
+      const thought = await Thought.findOneAndUpdate(
+        { _id: req.params.thoughtId },
         { $set: req.body },
         { runValidators: true, new: true }
       );
 
-      if (!course) {
-        res.status(404).json({ message: 'No course with this id!' });
+      if (!thought) {
+        res.status(404).json({ message: 'No thought with this id!' });
       }
 
-      res.json(course);
+      res.json(thought);
     } catch (err) {
       res.status(500).json(err);
     }
