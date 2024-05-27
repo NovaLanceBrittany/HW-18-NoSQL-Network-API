@@ -24,7 +24,7 @@ const reactionSchema = new Schema(
       type: Date,
       // Sets a default value to the current timestamp
       default: Date.now,
-      get: (timestamp) => moment(timestamp).format('MMMM Dl YYYY, h:mm:ss a'),
+      get: (timestamp) => moment(timestamp).format('MMMM Do YYYY, h:mm:ss a'),
     },
   },
 

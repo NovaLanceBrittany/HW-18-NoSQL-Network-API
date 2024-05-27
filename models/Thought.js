@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
-const moment = require('./moment')
+const moment = require('moment')
 
 // Schema to create Thought model
 const thoughtSchema = new Schema(
@@ -8,14 +8,14 @@ const thoughtSchema = new Schema(
     thoughtText: {
       type: String,
       required: true,
-      minlength: 1,
-      maxlength: 280
+      minLength: 1,
+      maxLength: 280
     },
 
     createdAt: {
       type: Date,
       default: Date.now,
-      get: (timestamp) => moment(timestamp).format('MMMM Dl YYYY, h:mm:ss a')
+      get: (timestamp) => moment(timestamp).format('MMMM Do YYYY, h:mm:ss a')
     },
     
     // The user that created this thought
@@ -37,8 +37,8 @@ const thoughtSchema = new Schema(
 
 
 thoughtSchema.virtual('reactionCount').get(function () {
-  return this,reactions.length ; 
+  return this.reactions.length ; 
 });
 
 const Thought = model('thought', thoughtSchema);
-module.exports = thoughtSchema;
+module.exports = Thought;
