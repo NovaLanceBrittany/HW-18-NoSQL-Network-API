@@ -43,21 +43,8 @@ As a social media startup, I want an API for my social network that uses a NoSQL
 
 ## Mock-Up:
 
-The following screenshots show examples of the application's API routes being tested in Postman.
+Please review the Google Drive for a video review. 
 
-
-
-![Screenshot of GET routes to return all users and all thoughts being tested in Postman.](./Assets/18-nosql-homework-demo-1.gif)
-
-
-![Screenshot that shows GET routes to return a single user and a single thought being tested in Postman.](./Assets/18-nosql-homework-demo-0.gif)
-
-
-
-![Screenshot that shows the POST, PUT, and DELETE routes for users being tested in Postman.](./Assets/18-nosql-homework-demo-03.gf)
-
-
-![Screenshot that shows the POST and DELETE routes for a user’s friend list being tested in Postman.](./Assets/18-nosql-homework-demo-04.gi)
 
 
 
